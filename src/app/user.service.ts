@@ -32,10 +32,10 @@ export class UserService {
             friendList: list
         })
             .then(function(){
-                console.log("yey sukses di apdet");
+                console.log("Success");
             })
             .catch(function(error){
-                console.log("ciye ga bisa apdet: ", error);
+                console.log("Error: ", error);
             })
     }
 
