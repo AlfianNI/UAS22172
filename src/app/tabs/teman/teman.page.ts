@@ -27,6 +27,6 @@ export class TemanPage implements OnInit {
     tambahTemen() {
         console.log(this.temenEuy);
         this.friendList.push(this.temenEuy);
-        this.userService.tambahTemen(this.friendList, this.userId);
+        this.userService.addFriend(this.friendList, this.userId);
     }
 }

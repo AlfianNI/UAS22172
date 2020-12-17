@@ -1,3 +1,4 @@
+
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Plugins } from '@capacitor/core';
@@ -26,10 +27,15 @@ export class MapsPage {
     map: any;
     markers = [];
     userLoc = {lat: -6.181589, lng: 106.663363};
+    infoWindow:any = new google.maps.InfoWindow();
 
     constructor(private afs: AngularFirestore) {
         this.getCurrentLocation();
     }
+
+    ionViewDidEnter(){
+        this.showMap();
+      }
 
     showMap() {
         const options = {
@@ -50,26 +56,29 @@ export class MapsPage {
     }
 
     getCurrentLocation() {
-        return new Promise((resolve, reject) => {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position: Position) => {
-                        this.userLoc = {lat: position.coords.latitude, lng: position.coords.longitude};
-                        resolve();
-                    },
-                    (err) => {
-                        reject(err);
-                    }
-                );
-            }
-
-        });
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((position:Position)=>{
+              const pos={
+                lat:position.coords.latitude,
+                lng:position.coords.longitude
+              };
+              console.log(pos);
+              this.infoWindow.setPosition(pos);
+              this.infoWindow.setContent('Your Current Location');
+              this.infoWindow.open(this.map);
+              this.map.setCenter(pos);
+            });
+          }
     }
 
     addCheckIn() {
         //var.
 
         //}
+    }
+
+    centerMap(){
+
     }
 }
 
