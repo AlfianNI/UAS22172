@@ -1,9 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>maps</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>maps</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-button color="danger" expand="full" (click)="showCurrLoc()">Current Location</ion-button>
+    <div #map id="map"></div>
 </ion-content>
