@@ -51,11 +51,11 @@ export class UserService {
             lasLoc: userHistoryLoc,
         })
             .then(function() {
-                console.log('yey selese aplot!!!!');
+                console.log('Upload Finished');
 
             })
             .catch(function(error) {
-                console.error('ciyeee gabisa apdet yaaaa', error);
+                console.error('Error: ', error);
 
             });
 

@@ -8,7 +8,7 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
-                    <h1>MASUK <br>AKUN</h1>
+                    <h1>Log In</h1>
                 </ion-col>
 
             </ion-row>
@@ -22,20 +22,20 @@
             <ion-input class="ion-padding-start" style="font-size: 18px;" type="text" name="emails" ngModel #email="ngModel" required></ion-input>
         </ion-card>
         <ion-item lines="none" *ngIf="!email.valid && email.touched">
-            <ion-note color="danger">Email tidak boleh kosong.</ion-note>
+            <ion-note color="danger">Invalid.</ion-note>
         </ion-item>
 
-        <ion-label position="fixed" class="ion-padding-start">Kata Sandi</ion-label>
+        <ion-label position="fixed" class="ion-padding-start">Password</ion-label>
         <ion-card class="input-field">
             <ion-input class="ion-padding-start" style="font-size: 18px;" type="password" name="password" ngModel #password="ngModel" required></ion-input>
         </ion-card>
         <ion-item lines="none" *ngIf="!password.valid && password.touched">
-            <ion-note color="danger">Password tidak boleh kosong.</ion-note>
+            <ion-note color="danger">Invalid.</ion-note>
         </ion-item>
 
         <ion-row>
             <ion-col>
-                <ion-button type="submit" color="secondary" shape="round" [disabled]="!form.valid" (click)="presentLoading(email, password)" expand="block">MASUK</ion-button>
+                <ion-button type="submit" color="secondary" shape="round" [disabled]="!form.valid" (click)="presentLoading(email, password)" expand="block">Login</ion-button>
             </ion-col>
         </ion-row>
 
