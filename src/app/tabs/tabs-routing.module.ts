@@ -17,7 +17,7 @@ const routes: Routes = [
             loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
         },
         {
-            path: 'teman',
+            path: 'friend',
             loadChildren: () => import('./friend/friend.module').then( m => m.FriendPageModule)
         }
     ]
