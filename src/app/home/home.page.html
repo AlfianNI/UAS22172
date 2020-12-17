@@ -19,7 +19,7 @@
 
         <ion-label position="fixed" class="ion-padding-start">Email</ion-label>
         <ion-card class="input-field">
-            <ion-input class="ion-padding-start" style="font-size: 18px;" type="text" name="emails" ngModel #email="ngModel" required></ion-input>
+            <ion-input class="ion-padding-start" style="font-size: 18px;" type="text" name="email" ngModel #email="ngModel" required></ion-input>
         </ion-card>
         <ion-item lines="none" *ngIf="!email.valid && email.touched">
             <ion-note color="danger">Invalid.</ion-note>
@@ -47,4 +47,6 @@
             </ion-col>
         </ion-row>
     </form>
+
+
 </ion-content>
