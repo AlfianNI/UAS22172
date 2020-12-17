@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
 import {Router} from '@angular/router';
 import {LoadingController} from '@ionic/angular';
-import { AngularFireAuth } from '@angular/fire/auth';
-
 
 @Component({
   selector: 'app-home',
@@ -11,12 +9,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
   constructor(
       public authService: AuthenticationService,
       public router: Router,
-      private loadingCtrl: LoadingController,
-      public afAuth: AngularFireAuth
+      private loadingCtrl: LoadingController
   ) { }
 
   ngOnInit() {
@@ -49,7 +45,5 @@ export class HomePage implements OnInit {
       this.logIn(email, password);
     });
   }
-
-  
 
 }

@@ -26,16 +26,16 @@ export class UserService {
     getAllUsers(): AngularFireList<User> {
         return this.userRef;
     }
-    addFriend(list,uid){
+    tambahTemen(list,uid){
         var userCollection = this.db.collection("userId").doc(uid);
         return userCollection.update({
             friendList: list
         })
             .then(function(){
-                console.log("Success");
+                console.log("yey sukses di apdet");
             })
             .catch(function(error){
-                console.log("Error: ", error);
+                console.log("ciye ga bisa apdet: ", error);
             })
     }
 
@@ -51,11 +51,11 @@ export class UserService {
             lasLoc: userHistoryLoc,
         })
             .then(function() {
-                console.log('Upload Finished');
+                console.log('yey selese aplot!!!!');
 
             })
             .catch(function(error) {
-                console.error('Error: ', error);
+                console.error('ciyeee gabisa apdet yaaaa', error);
 
             });
 

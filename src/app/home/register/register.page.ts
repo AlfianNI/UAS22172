@@ -32,7 +32,7 @@ export class RegisterPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'Verification Sent',
+      message: 'Link verifikasi sukses dikirim!',
       color: 'secondary',
       duration: 4000
     });
