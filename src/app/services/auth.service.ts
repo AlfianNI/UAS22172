@@ -28,12 +28,12 @@ export class AuthService {
 
   async signup(
     email: string,
-    password: string
+    password: string,
   ): Promise<firebase.auth.UserCredential> {
     try {
       const newUserCredential: firebase.auth.UserCredential = await this.afAuth.createUserWithEmailAndPassword(
         email,
-        password
+        password,
       );
       await this.firestore
         .doc(`userProfile/${newUserCredential.user.uid}`)

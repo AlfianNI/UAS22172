@@ -35,8 +35,7 @@ export class AuthFormComponent implements OnInit {
       this.showLoading();
       const credentials: UserCredential = {
         email: authForm.value.email,
-        password: authForm.value.password,
-        name: authForm.value.name
+        password: authForm.value.password
       };
       this.formSubmitted.emit(credentials);
     }
