@@ -26,7 +26,7 @@ export class UserService {
     getAllUsers(): AngularFireList<User> {
         return this.userRef;
     }
-    tambahTemen(list,uid){
+    addFriend(list,uid){
         var userCollection = this.db.collection("userId").doc(uid);
         return userCollection.update({
             friendList: list
