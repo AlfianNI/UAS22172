@@ -5,11 +5,6 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 
-interface user {
-	username: string,
-	uid: string
-}
-
 @Injectable({
     providedIn: 'root'
 })
@@ -23,8 +18,7 @@ export class UserService {
         public ngFireAuth: AngularFireAuth,
         public router: Router,
         public ngZone: NgZone,
-        private db: AngularFirestore,
-        private afAuth: AngularFireAuth) {
+        private db: AngularFirestore) {
 
 
     }
@@ -66,9 +60,5 @@ export class UserService {
             });
 
     }
-
-    
-
-    
 
 }
