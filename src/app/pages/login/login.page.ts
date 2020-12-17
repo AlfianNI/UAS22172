@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
       );
       this.authService.userId = userCredential.user.uid;
       await this.loginForm.hideLoading();
-      this.router.navigateByUrl('tabs/maps');
+      this.router.navigateByUrl('tabs');
     } catch (error) {
       await this.loginForm.hideLoading();
       this.loginForm.handleError(error);
