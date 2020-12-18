@@ -16,6 +16,7 @@ import { UserProfile } from '../models/user';
 export class ProfileService {
   private userProfile: AngularFirestoreDocument<UserProfile>;
   private currentUser: firebase.User;
+  private id:any;
   constructor(
     private firestore: AngularFirestore,
     private authService: AuthService
@@ -25,11 +26,20 @@ export class ProfileService {
     const user: firebase.User = await this.authService.getUser();
     this.currentUser = user;
     this.userProfile = this.firestore.doc(`userProfile/${user.uid}`);
+    this.id = user.uid;
     return this.userProfile.valueChanges();
   }
 
   updateName(fullName: string): Promise<void> {
     return this.userProfile.update({ fullName });
+  }
+
+  updateLocation(lat:number,lng:number):Promise<void>{
+    return this.userProfile.update({lat,lng});
+  }
+
+  getId(){
+    return this.id;
   }
 
   async updateEmail(newEmail: string, password: string): Promise<void> {

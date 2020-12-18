@@ -1,25 +1,25 @@
 <ion-header>
     <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-button routerLink='./add-friend'>
-                <ion-icon slot="icon-only" name="add-outline">Add Friends</ion-icon>
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-back-button></ion-back-button>
             </ion-button>
         </ion-buttons>
-        <ion-title>Friend</ion-title>
+        <ion-title>Add Friend</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list *ngIf="userProfile?.fullName">
-        <ion-item *ngFor="let friend of userProfile.friend">
+    <ion-list *ngFor="let user of (users|async)">
+        <ion-item>
             <ion-label>
                 <ion-grid>
                     <ion-row>
                         <ion-col class="text-center" size="7">
-                            {{friend.fullName}}
+                            {{user.fullName}}
                         </ion-col>
                         <ion-buttons>
-                            <ion-button color="danger" (click)="deleteFriend(friend)">Delete Friend</ion-button>
+                            <ion-button (click)="addFriend(user)">Add Friend</ion-button>
                         </ion-buttons>
                     </ion-row>
                 </ion-grid>

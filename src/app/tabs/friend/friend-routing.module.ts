@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: FriendPage
+  },
+  {
+    path: 'add-friend',
+    loadChildren: () => import('./add-friend/add-friend.module').then( m => m.AddFriendPageModule)
   }
 ];
 

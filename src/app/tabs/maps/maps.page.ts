@@ -1,4 +1,6 @@
 import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
+import { UserProfile } from 'src/app/models/user';
+import { ProfileService } from 'src/app/services/profile.service';
 declare var google:any;
 @Component({
   selector: 'app-maps',
@@ -14,11 +16,17 @@ export class MapsPage implements OnInit {
     lat:-6.256081,
     lng:106.618755
   };
+  public userProfile: UserProfile;
 
   userLoc:any ={lat:0,lng:0};
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
+    this.profileService.getUserProfile().then(profile$ => {
+      profile$.subscribe(userProfile => {
+        this.userProfile = userProfile;
+      });
+    });
   }
 
   ionViewDidEnter(){
@@ -37,6 +45,7 @@ export class MapsPage implements OnInit {
         this.infoWindow.setContent('You Are Here');
         console.log(pos);
         this.userLoc = {lat:pos.lat,lng:pos.lng};
+        this.profileService.updateLocation(this.userLoc.lat,this.userLoc.lng);
       });
     }
 

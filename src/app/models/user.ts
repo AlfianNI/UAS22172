@@ -8,4 +8,12 @@ export interface UserProfile {
   fullName: string;
   lat:number;
   lng:number;
+  friend:friend[];
+}
+
+export interface friend {
+  email: string;
+  fullName: string;
+  lat:number;
+  lng:number;
 }
