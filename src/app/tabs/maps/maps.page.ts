@@ -12,7 +12,7 @@ export class MapsPage implements OnInit {
   map:any;
   infoWindow:any = new google.maps.InfoWindow();
   @ViewChild('map',{read:ElementRef,static:false}) mapRef:ElementRef;
-  umnPos: any = {
+  Loc: any = {
     lat:-6.256081,
     lng:106.618755
   };
@@ -30,7 +30,7 @@ export class MapsPage implements OnInit {
   }
 
   ionViewDidEnter(){
-    this.showMap(this.umnPos);
+    this.showMap(this.Loc);
   }
   showCurrLoc(){
     if(navigator.geolocation){
