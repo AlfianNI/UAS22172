@@ -5,13 +5,13 @@
                 <ion-back-button></ion-back-button>
             </ion-button>
         </ion-buttons>
-        <ion-title>Add Friend</ion-title>
+        <ion-title>Add Friend (Klik Add Friend sudah mengirim ke Firebase tapi tidak bisa ditampilkan di List Friend)</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-list *ngFor="let user of (users|async)">
-        <ion-item>
+        <ion-item *ngIf="user.email != userProfile.email">
             <ion-label>
                 <ion-grid>
                     <ion-row>

@@ -17,6 +17,7 @@
         <ion-label>
             <ion-grid>
                 <ion-row>
+                    <ion-col class="text-left" size="3">Tap Your Name to Edit</ion-col>
                     <ion-col class="text-left" size="5"> Name </ion-col>
                     <ion-col class="text-center" size="7" *ngIf="userProfile?.fullName">
                         {{userProfile?.fullName}}
@@ -33,6 +34,7 @@
         <ion-label>
             <ion-grid>
                 <ion-row>
+                    <ion-col class="text-left" size="3">Tap Your Email to Edit</ion-col>
                     <ion-col class="text-left" size="5"> Email </ion-col>
                     <ion-col class="text-center" size="7" *ngIf="userProfile?.email">
                         {{userProfile?.email}}
@@ -49,6 +51,7 @@
         <ion-label>
             <ion-grid>
                 <ion-row>
+                    <ion-col class="text-left" size="3">Tap Your Pass to Edit</ion-col>
                     <ion-col class="text-left" size="5"> Password </ion-col>
                     <ion-col class="text-center" size="7" class="placeholder-profile">
                         <span> Tap here to edit. </span>

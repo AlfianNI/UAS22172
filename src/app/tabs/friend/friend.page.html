@@ -10,13 +10,13 @@
 </ion-header>
 
 <ion-content>
-    <ion-list *ngIf="userProfile?.fullName">
-        <ion-item *ngFor="let friend of userProfile.friend">
+    <ion-list *ngIf="userProfile">
+        <ion-item *ngFor="let friend of (userProfile|async)">
             <ion-label>
                 <ion-grid>
                     <ion-row>
                         <ion-col class="text-center" size="7">
-                            {{friend.fullName}}
+                            {{friend.friend.fullName}}
                         </ion-col>
                         <ion-buttons>
                             <ion-button color="danger" (click)="deleteFriend(friend)">Delete Friend</ion-button>
@@ -26,4 +26,5 @@
             </ion-label>
         </ion-item>
     </ion-list>
+    <ion-text></ion-text>
 </ion-content>
